@@ -5,3 +5,5 @@
     composer init
 - Adicionando autoload.
     composer dumpautoload
+- Usando migrations com o Phinx (https://phinx.org/):
+    composer require robmorgan/phinx:0.7.1
