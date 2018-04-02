@@ -1,0 +1,5 @@
+# php-004-son-gerenciador-financas-pessoais
+
+# Anotações:
+- Criando novo projeto com composer:
+    composer init
