@@ -3,3 +3,5 @@
 # Anotações:
 - Criando novo projeto com composer:
     composer init
+- Adicionando autoload.
+    composer dumpautoload
