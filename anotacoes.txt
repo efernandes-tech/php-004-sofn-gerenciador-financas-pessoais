@@ -10,3 +10,13 @@
 - Configurando as credenciais do banco de dados.
 - Criando migrações com o phinx.
     vendor/bin/phinx.bat create CreateCategoryCosts
+- Executando migrações.
+    vendor/bin/phinx.bat migrate
+    vendor/bin/phinx.bat migrate -e development
+- Revertendo migrações.
+    vendor/bin/phinx.bat rollback
+    vendor/bin/phinx.bat rollback -e development
+    - Remove especifico.
+        vendor/bin/phinx.bat rollback -e development -t=20180409180718
+    - Remove tudo.
+        vendor/bin/phinx.bat rollback -e development -t=0
