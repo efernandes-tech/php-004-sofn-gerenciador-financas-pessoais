@@ -30,3 +30,5 @@
 - Automatizando migrações e seeders.
     php migrate-seed.php
 - A PSR-4 é a atualização da PSR-0 (PHP 5.2) que esta deprecated.
+- Implementando containers com PIMPLE.
+    composer require xtreamwayz/pimple-container-interop
