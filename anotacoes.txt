@@ -27,3 +27,5 @@
     vendor/bin/phinx.bat seed:run -e development
 - Usando a biblioteca Faker para gerar dados fictícios.
     composer require fzaninotto/faker:1.6.0 --dev
+- Automatizando migrações e seeders.
+    php migrate-seed.php
