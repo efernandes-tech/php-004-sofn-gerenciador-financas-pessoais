@@ -8,3 +8,5 @@
 - Usando migrations com o Phinx (https://phinx.org/):
     composer require robmorgan/phinx:0.7.1
 - Configurando as credenciais do banco de dados.
+- Criando migrações com o phinx.
+    vendor/bin/phinx.bat create CreateCategoryCosts
