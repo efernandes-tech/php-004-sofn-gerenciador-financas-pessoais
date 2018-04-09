@@ -20,3 +20,8 @@
         vendor/bin/phinx.bat rollback -e development -t=20180409180718
     - Remove tudo.
         vendor/bin/phinx.bat rollback -e development -t=0
+- Criando seeders.
+    vendor/bin/phinx.bat seed:create CategoryCostsSeeder
+- Executando seeders.
+    vendor/bin/phinx.bat seed:run
+    vendor/bin/phinx.bat seed:run -e development
