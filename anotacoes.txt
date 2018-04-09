@@ -25,3 +25,5 @@
 - Executando seeders.
     vendor/bin/phinx.bat seed:run
     vendor/bin/phinx.bat seed:run -e development
+- Usando a biblioteca Faker para gerar dados fictícios.
+    composer require fzaninotto/faker:1.6.0 --dev

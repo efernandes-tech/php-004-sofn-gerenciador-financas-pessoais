@@ -15,4 +15,5 @@ return array(
     'SONFin\\' => array($baseDir . '/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Phinx\\' => array($vendorDir . '/robmorgan/phinx/src/Phinx'),
+    'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );
