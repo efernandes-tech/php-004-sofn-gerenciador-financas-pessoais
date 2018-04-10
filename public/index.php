@@ -21,12 +21,9 @@ $app->get('/home', function() {
 });
 
 $app->get('/home/{name}/{id}', function(ServerRequestInterface $request){
-    echo "Mostrando a home!!";
-    echo "<br>";
-    echo $request->getAttribute("name");
-    echo "<br>";
-    echo $request->getAttribute("id");
-    echo "<br>";
+    $response = new \Zend\Diactoros\Response();
+    $response->getBody()->write("response com emmiter do diactoros");
+    return $response;
 });
 
 $app->start();
