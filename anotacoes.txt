@@ -39,3 +39,5 @@
 - Criando primeira rota.
     - Rodar php server na raiz apontando todas as requisições para public:
         php -S localhost:1337 -t public public/index.php
+- Integração com Twig (template engine).
+    composer require twig/twig:~1.0
