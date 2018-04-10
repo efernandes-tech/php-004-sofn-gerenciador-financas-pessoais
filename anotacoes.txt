@@ -41,3 +41,5 @@
         php -S localhost:1337 -t public public/index.php
 - Integração com Twig (template engine).
     composer require twig/twig:~1.0
+- Integração com Eloquent ORM.
+    composer require illuminate/database:5.4.13
