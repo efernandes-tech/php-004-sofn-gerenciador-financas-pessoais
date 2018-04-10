@@ -32,3 +32,5 @@
 - A PSR-4 é a atualização da PSR-0 (PHP 5.2) que esta deprecated.
 - Implementando containers com PIMPLE.
     composer require xtreamwayz/pimple-container-interop
+- Integração com Aura.Router.
+    composer require aura/router:3.1.0
