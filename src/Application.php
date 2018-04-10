@@ -9,6 +9,7 @@ use SONFin\Plugins\PluginInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Zend\Diactoros\Response\SapiEmitter;
+use Zend\Diactoros\Response\RedirectResponse;
 
 class Application
 {
@@ -50,6 +51,18 @@ class Application
         $routing = $this->service('routing');
         $routing->post($name, $path, $action);
         return $this;
+    }
+
+    public function redirect($path)
+    {
+        return new RedirectResponse($path);
+    }
+
+    public function route(string $name, array $params = [])
+    {
+        $generator = $this->service('routing.generator');
+        $path = $generator->generate($name, $params);
+        return $this->redirect($path);
     }
 
     public function start()

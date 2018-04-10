@@ -17,28 +17,23 @@ $app->plugin(new RoutePlugin());
 $app->plugin(new ViewPlugin());
 $app->plugin(new DbPlugin());
 
-// $app->get('/{name}', function(ServerRequestInterface $request) use ($app) {
-//     $view = $app->service('view.renderer');
-//     return $view->render('test.html.twig', array('name' => $request->getAttribute('name')));
-// });
-
 $app
-    ->get('/category-costs', function() use ($app) {
+    ->get('/category-costs', function() use($app){
         $meuModel = new CategoryCost();
         $categories = $meuModel->all();
         $view = $app->service('view.renderer');
         return $view->render('category-costs/list.html.twig',[
             'categories' => $categories
         ]);
-    })
+    }, 'category-costs.list')
     ->get('/category-costs/new', function() use($app){
         $view = $app->service('view.renderer');
         return $view->render('category-costs/create.html.twig');
-    })
-    ->post('/category-costs/store', function(ServerRequestInterface $request){
+    }, 'category-costs.new')
+    ->post('/category-costs/store', function(ServerRequestInterface $request) use($app){
         $data = $request->getParsedBody();
         SONFin\Models\CategoryCost::create($data);
-        return new \Zend\Diactoros\Response\RedirectResponse('/category-costs');
-    });
+        return $app->route('category-costs.list');
+    }, 'category-costs.store');
 
 $app->start();
