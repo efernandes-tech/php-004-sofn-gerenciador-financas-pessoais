@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace SONFin;
 
-class ClassName
+use SONFin\ServiceContainerInterface;
+use SONFin\Plugins\PluginInterface;
+
+class Application
 {
     private $serviceContainer;
 
-    /**
-     * [__construct description]
-     * @author Éderson Fernandes <edersonluis.rf@gmail.com>
-     * @param  ServiceContainerInterface $serviceContainer [description]
-     */
     function __construct(ServiceContainerInterface $serviceContainer)
     {
         $this->serviceContainer = $serviceContainer;
@@ -35,5 +33,19 @@ class ClassName
     public function plugin(PluginInterface $plugin) : void
     {
         $plugin->register($this->serviceContainer);
+    }
+
+    public function get($path, $action, $name = null) : Application
+    {
+        $routing = $this->service('routing');
+        $routing->get($name, $path, $action);
+        return $this;
+    }
+
+    public function start()
+    {
+        $route = $this->service('route');
+        $callable = $route->handler;
+        $callable();
     }
 }

@@ -36,3 +36,6 @@
     composer require aura/router:3.1.0
 - Configurando combinador de rotas.
     composer require zendframework/zend-diactoros:1.3.10
+- Criando primeira rota.
+    - Rodar php server na raiz apontando todas as requisições para public:
+        php -S localhost:1337 -t public public/index.php
