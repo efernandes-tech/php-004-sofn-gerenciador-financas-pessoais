@@ -11,6 +11,10 @@ class ComposerStaticInit2d32c1cad3ecec127438c6885337a7ae
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zend\\Diactoros\\' => 15,
+        ),
         'X' => 
         array (
             'Xtreamwayz\\Pimple\\' => 18,
@@ -47,6 +51,10 @@ class ComposerStaticInit2d32c1cad3ecec127438c6885337a7ae
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\Diactoros\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
         'Xtreamwayz\\Pimple\\' => 
         array (
             0 => __DIR__ . '/..' . '/xtreamwayz/pimple-container-interop/src',

@@ -34,3 +34,5 @@
     composer require xtreamwayz/pimple-container-interop
 - Integração com Aura.Router.
     composer require aura/router:3.1.0
+- Configurando combinador de rotas.
+    composer require zendframework/zend-diactoros:1.3.10
