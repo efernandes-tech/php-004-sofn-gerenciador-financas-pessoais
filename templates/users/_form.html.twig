@@ -1,0 +1,23 @@
+<form method="post" action="{{ action }}">
+    <div class="form-group">
+        <label class="control-label">Primeiro Nome</label>
+        <input class="form-control" type="text" placeholder="Primeiro Nome" name="first_name" value="{{ user.first_name }}">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Último Nome</label>
+        <input class="form-control" type="text" placeholder="Último Nome" name="last_name" value="{{ user.last_name }}">
+    </div>
+    <div class="form-group">
+        <label class="control-label">E-mail</label>
+        <input class="form-control" type="text" placeholder="email@email.com" name="email" value="{{ user.email }}">
+    </div>
+    {% if user.id is null %}
+        <div class="form-group">
+            <label class="control-label">Senha</label>
+            <input class="form-control" type="text" placeholder="Senha" name="password">
+        </div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary btn-block">
+        <span class="glyphicon glyphicon-{{ submitIcon }}"></span>
+    </button>
+</form>

@@ -51,3 +51,11 @@
     - Rodando migration e seeder.
         vendor/bin/phinx.bat migrate
         vendor/bin/phinx.bat seed:run
+- Criando CRUD de usuários.
+    - Duplicar o controller "category-costs" para "users".
+        - Refatorar nomes "categorys" e "category" para "users" e "user".
+    - Em "DbPlugin" registrar repositorio "user.repository" copiando o "addLazy" de "category-cost".
+        - Mudar a classe (model) dentro de "->factory()" de "CategoryCost" para "User".
+    - Duplicar a pasta "templates/category-costs" para "templates/users".
+        - Fazer as mudanças pontuais nessas views copiadas.
+    - Registrar o controller dentro do "public/index.php";
