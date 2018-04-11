@@ -45,3 +45,9 @@
     composer require illuminate/database:5.4.13
 - Organizando controllers.
     - Pasta "controllers" em minusculo pq não tem classes mas sim só arquivos.
+- Criando model de usuários.
+    - Criando a migration.
+        vendor/bin/phinx.bat create CreateUsersTable
+    - Rodando migration e seeder.
+        vendor/bin/phinx.bat migrate
+        vendor/bin/phinx.bat seed:run
