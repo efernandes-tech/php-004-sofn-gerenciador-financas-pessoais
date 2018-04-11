@@ -22,26 +22,32 @@ class DefaultRepository implements RepositoryInterface
 
     public function all(): array
     {
-
+        return $this->_model->all()->toArray();
     }
 
     public function create(array $data)
     {
-
+        $this->_model->fill($data);
+        $this->_model->save();
+        return $this->_model;
     }
 
     public function update(int $id, array $data)
     {
-
+        $model = $this->find($id);
+        $model->fill($data);
+        $model->save();
+        return $model;
     }
 
     public function delete(int $id)
     {
-
+        $model = $this->find($id);
+        $model->delete();
     }
 
     public function find(int $id)
     {
-
+        return $this->_model->findOrFail($id);
     }
 }
