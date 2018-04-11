@@ -1,6 +1,5 @@
 <?php
 
-use Psr\Http\Message\ServerRequestInterface;
 use SONFin\Application;
 use SONFin\Plugins\DbPlugin;
 use SONFin\Plugins\RoutePlugin;
