@@ -2,6 +2,8 @@
 
 namespace SONFin\Auth;
 
+use SONFin\Models\UserInterface;
+
 class Auth implements AuthInterface
 {
     /**
@@ -28,14 +30,25 @@ class Auth implements AuthInterface
         return $this->jasnyAuth->login($email, $password) !== null;
     }
 
+    /**
+     * @return mixed
+     */
     public function check(): bool
     {
-        return $this->jasnyAuth->user() !== null;
+        return $this->user() !== null;
     }
 
     public function logout(): void
     {
         // TODO: Implement logout() method.
+    }
+
+    /**
+     * @return mixed
+     */
+    public function user(): ? UserInterface
+    {
+        return $this->jasnyAuth->user();
     }
 
     /**
