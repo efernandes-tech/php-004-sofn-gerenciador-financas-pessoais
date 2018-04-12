@@ -61,3 +61,6 @@
     - Registrar o controller dentro do "public/index.php";
 - Integração com "jasny-auth".
     composer require jasny/auth:1.0.1
+- Adicionando usuários às categorias.
+    vendor/bin/phinx.bat create AddUserToCategoryCosts
+    php migrate-seed.php
