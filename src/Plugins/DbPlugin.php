@@ -9,6 +9,7 @@ use SONFin\ServiceContainerInterface;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use SONFin\Repository\RepositoryFactory;
 use SONFin\Models\User;
+use SONFin\Models\CategoryCost;
 
 class DbPlugin implements PluginInterface
 {
