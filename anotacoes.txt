@@ -64,3 +64,6 @@
 - Adicionando usuários às categorias.
     vendor/bin/phinx.bat create AddUserToCategoryCosts
     php migrate-seed.php
+- Criando estrutura de contas a receber
+    vendor/bin/phinx.bat create CreateBillReceivesTable
+    php migrate-seed.php
