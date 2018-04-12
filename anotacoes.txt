@@ -59,3 +59,5 @@
     - Duplicar a pasta "templates/category-costs" para "templates/users".
         - Fazer as mudanças pontuais nessas views copiadas.
     - Registrar o controller dentro do "public/index.php";
+- Integração com "jasny-auth".
+    composer require jasny/auth:1.0.1
