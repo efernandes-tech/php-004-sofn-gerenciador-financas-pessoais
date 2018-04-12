@@ -6,14 +6,21 @@ namespace SONFin\Plugins;
 
 use Interop\Container\ContainerInterface;
 use SONFin\Auth\Auth;
+use SONFin\Auth\JasnyAuth;
 use SONFin\ServiceContainerInterface;
 
 class AuthPlugin implements PluginInterface
 {
+    /**
+     * @param ServiceContainerInterface $container
+     */
     public function register(ServiceContainerInterface $container)
     {
+        $container->addLazy('jasny.auth', function (ContainerInterface $container) {
+            return new JasnyAuth($container->get('user.repository'));
+        });
         $container->addLazy('auth', function (ContainerInterface $container) {
-            return new Auth();
+            return new Auth($container->get('jasny.auth'));
         });
     }
 }
