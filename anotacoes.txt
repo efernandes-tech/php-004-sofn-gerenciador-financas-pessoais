@@ -1,5 +1,28 @@
 # php-004-son-gerenciador-financas-pessoais
 
+# Criando um CRUD:
+    1 - Criando migration, seeder e modelo.
+        - Na linha de comando criar a migration.
+            vendor/bin/phinx.bat create CreateBillReceivesTable
+        - Preparar funções "up" e "down" da migration criada.
+        - Criar novo arquivo de modelo na pasta "src/Models".
+            - Adicionar os fillables (campos da tabela).
+        - Criar o arquivo de seeder.
+            - Na linha de comando.
+                vendor/bin/phinx.bat seed:create CategoryCostsSeeder
+            - Editar a função "run" para criar o seeder.
+                - Pode usar a classe "Faker" para gerar dados.
+        - Adicionar migration no arquivo "migrate-seed.php".
+        - Executar a migration.
+            php migrate-seed.php
+    2 - Criando controllers, templates e .
+        - Duplicar controller "category-costs" e renomer para o novo.
+            - Adicionar o "require" no arquivo "public/index.php".
+            - Mudar os nomes de rotas e variaveis no arquivo (category-costs => novo).
+        - Registrar o novo repositório (model) no arquivo de "DbPlugin.php".
+        - Duplicar a pasta de template "category-costs" e renomear para o novo.
+            - Mudar nomes e fazer ajustes pontuais.
+
 # Anotações:
 - Criando novo projeto com composer:
     composer init
@@ -64,6 +87,6 @@
 - Adicionando usuários às categorias.
     vendor/bin/phinx.bat create AddUserToCategoryCosts
     php migrate-seed.php
-- Criando estrutura de contas a receber
+- Criando estrutura de contas a receber.
     vendor/bin/phinx.bat create CreateBillReceivesTable
     php migrate-seed.php
