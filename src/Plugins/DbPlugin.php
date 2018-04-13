@@ -1,24 +1,29 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace SONFin\Plugins;
 
-use Interop\Container\ContainerInterface;
-use SONFin\ServiceContainerInterface;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use SONFin\Repository\RepositoryFactory;
-use SONFin\Models\User;
-use SONFin\Models\CategoryCost;
-use SONFin\Models\BillReceive;
+use Interop\Container\ContainerInterface;
 use SONFin\Models\BillPay;
+use SONFin\Models\BillReceive;
+use SONFin\Models\CategoryCost;
+use SONFin\Models\User;
+use SONFin\Repository\RepositoryFactory;
+use SONFin\Repository\StatementRepository;
+use SONFin\ServiceContainerInterface;
 
 class DbPlugin implements PluginInterface
 {
+    /**
+     * @param ServiceContainerInterface $container
+     * @return mixed
+     */
     public function register(ServiceContainerInterface $container)
     {
         $capsule = new Capsule();
-        $config = include __DIR__ . '/../../config/db.php';
+        $config  = include __DIR__ . '/../../config/db.php';
         $capsule->addConnection($config['development']);
         $capsule->bootEloquent();
 
@@ -38,6 +43,10 @@ class DbPlugin implements PluginInterface
 
         $container->addLazy('user.repository', function (ContainerInterface $container) {
             return $container->get('repository.factory')->factory(User::class);
+        });
+
+        $container->addLazy('statement.repository', function () {
+            return new StatementRepository();
         });
     }
 }

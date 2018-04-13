@@ -2,6 +2,10 @@
 
 namespace SONFin\Repository;
 
+use Illuminate\Support\Collection;
+use SONFin\Models\BillPay;
+use SONFin\Models\BillReceive;
+
 class StatementRepository implements StatementRepositoryInterface
 {
 
@@ -24,5 +28,13 @@ class StatementRepository implements StatementRepositoryInterface
             ->whereBetween('date_launch', [$dateStart, $dateEnd])
             ->where('user_id', $userId)
             ->get();
+
+        $collection = new Collection(array_merge_recursive($billPays->toArray(), $billReceives->toArray()));
+        $statements = $collection->sortByDesc('date_launch');
+        return [
+            'statements'     => $statements,
+            'total_pays'     => $billPays->sum('value'),
+            'total_receives' => $billReceives->sum('value'),
+        ];
     }
 }
