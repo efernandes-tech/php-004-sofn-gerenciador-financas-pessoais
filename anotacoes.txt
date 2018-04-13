@@ -21,7 +21,7 @@
             - Mudar os nomes de rotas e variaveis no arquivo (category-costs => novo).
         - Registrar o novo repositório (model) no arquivo de "DbPlugin.php".
         - Duplicar a pasta de template "category-costs" e renomear para o novo.
-            - Mudar nomes e fazer ajustes pontuais.
+            - Mudar nomes e fazer ajustes pontuais na lista e cadastro.
 
 # Anotações:
 - Criando novo projeto com composer:
@@ -89,4 +89,8 @@
     php migrate-seed.php
 - Criando estrutura de contas a receber.
     vendor/bin/phinx.bat create CreateBillReceivesTable
+    php migrate-seed.php
+- Iniciando CRUD de contas a pagar.
+    vendor/bin/phinx.bat create CreateBillPaysTable
+    vendor/bin/phinx.bat seed:create BillPaysSeeder
     php migrate-seed.php
