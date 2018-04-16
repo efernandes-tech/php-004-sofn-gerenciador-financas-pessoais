@@ -23,6 +23,17 @@
         - Duplicar a pasta de template "category-costs" e renomear para o novo.
             - Mudar nomes e fazer ajustes pontuais na lista e cadastro.
 
+# PHP Code Sniffer.
+    - Instalação local.
+        composer require squizlabs/php_codesniffer:* --dev
+    - Conferir erros (em todos ou 1 só).
+        vendor/bin/phpcs ./src
+        vendor/bin/phpcs ./src/View/Twig/TwigGlobals.php
+    - Conferir erros de forma resumida.
+        vendor/bin/phpcs --report=summary ./src
+    - Corrigindo erros.
+        vendor/bin/phpcbf ./src
+
 # Anotações:
 - Criando novo projeto com composer:
     composer init
@@ -97,3 +108,13 @@
 - Configurando variaveis de ambiente.
     Instalando a biblioteca phpdotev.
         composer require vlucas/phpdotenv:2.4
+- PHP Code Sniffer.
+    - Instalação.
+        composer require squizlabs/php_codesniffer:* --dev
+    - Conferir erros (todos ou 1 só).
+        vendor/bin/phpcs ./src
+        vendor/bin/phpcs ./src/View/Twig/TwigGlobals.php
+    - Conferir erros de forma resumida.
+        vendor/bin/phpcs --report=summary ./src
+    - Corrigindo erros.
+        vendor/bin/phpcbf ./src
