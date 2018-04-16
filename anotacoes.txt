@@ -118,3 +118,9 @@
         vendor/bin/phpcs --report=summary ./src
     - Corrigindo erros.
         vendor/bin/phpcbf ./src
+- Conhecendo o Heroku.
+    - Instalação do Heroku CLI.
+        https://devcenter.heroku.com/articles/heroku-cli
+    - Verificar versão e obter ajuda depois de instalado.
+        heroku --version
+        heroku --help
