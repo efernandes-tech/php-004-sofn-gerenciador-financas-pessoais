@@ -127,3 +127,13 @@
 - Criando usuário administrativo por migração.
     vendor/bin/phinx create CreateUserAdminData
     php migrate-seed.php
+- Iniciando deploy no Heroku.
+    - Na linha de comando.
+        heroku login
+    - Criando nova aplicação.
+        heroku create php-004-son-gerenciador-financas-pessoais
+    - Criar arquivo de configuração do ambiente para o Heroku.
+        ./Procfile.txt
+    - Criar no Heroku, na pagina de configs da app, as variaveis de ambiente para a base de dados.
+        - Tmb Adicionar o Add-ons para o banco de dados.
+            Heroku Postgres
