@@ -11,6 +11,7 @@ class User extends Model implements JasnyUser, UserInterface
 {
     /**
      * Mass Assignment.
+     *
      * @var array
      */
     protected $fillable = [

@@ -19,7 +19,7 @@ class CategoryCostRepository extends DefaultRepository implements CategoryCostRe
     /**
      * @param string $dateStart
      * @param string $dateEnd
-     * @param int $userId
+     * @param int    $userId
      * @return mixed
      */
     public function sumByPeriod(string $dateStart, string $dateEnd, int $userId): array

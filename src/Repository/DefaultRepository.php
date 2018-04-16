@@ -68,7 +68,7 @@ class DefaultRepository implements RepositoryInterface
     }
 
     /**
-     * @param int $id
+     * @param int  $id
      * @param bool $failIfNotExist
      * @return mixed
      */

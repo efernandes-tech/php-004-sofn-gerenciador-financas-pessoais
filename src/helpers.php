@@ -2,6 +2,7 @@
 
 /**
  * DD/MM/YYYY -> YYYY-MM-DD
+ *
  * @param $date
  */
 function dateParse($date)
@@ -13,7 +14,8 @@ function dateParse($date)
 
 /**
  * 1.000,50 -> 1000.50
- * @param $number
+ *
+ * @param  $number
  * @return mixed
  */
 function numberParse($number)

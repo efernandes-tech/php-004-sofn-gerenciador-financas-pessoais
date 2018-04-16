@@ -8,6 +8,7 @@ class BillPay extends Model
 {
     /**
      * Mass Assignment
+     *
      * @var array
      */
     protected $fillable = [
@@ -22,6 +23,7 @@ class BillPay extends Model
      * Criando o relacionamento.
      * 1 categoria pode estar em varias contas a pagar.
      * 1 conta a pagar tem uma categoria.
+     *
      * @return mixed
      */
     public function categoryCost()

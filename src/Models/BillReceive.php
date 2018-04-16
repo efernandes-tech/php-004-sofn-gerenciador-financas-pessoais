@@ -8,6 +8,7 @@ class BillReceive extends Model
 {
     /**
      * Mass Assignment.
+     *
      * @var array
      */
     protected $fillable = [

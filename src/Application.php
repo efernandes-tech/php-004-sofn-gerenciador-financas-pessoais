@@ -40,7 +40,7 @@ class Application
     }
 
     /**
-     * @param string $name
+     * @param string  $name
      * @param $service
      */
     public function addService(string $name, $service): void
@@ -96,7 +96,7 @@ class Application
 
     /**
      * @param string $name
-     * @param array $params
+     * @param array  $params
      * @return mixed
      */
     public function route(string $name, array $params = []): ResponseInterface
