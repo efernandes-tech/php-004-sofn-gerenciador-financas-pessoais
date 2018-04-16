@@ -133,7 +133,7 @@
     - Criando nova aplicação.
         heroku create php-004-son-gerenciador-financas-pessoais
     - Criar arquivo de configuração do ambiente para o Heroku.
-        ./Procfile.txt
+        "Procfile"
     - Criar no Heroku, na pagina de configs da app, as variaveis de ambiente para a base de dados.
         - Tmb Adicionar o Add-ons para o banco de dados.
             Heroku Postgres
