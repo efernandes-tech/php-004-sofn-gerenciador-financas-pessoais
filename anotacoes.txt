@@ -124,3 +124,6 @@
     - Verificar versão e obter ajuda depois de instalado.
         heroku --version
         heroku --help
+- Criando usuário administrativo por migração.
+    vendor/bin/phinx create CreateUserAdminData
+    php migrate-seed.php
