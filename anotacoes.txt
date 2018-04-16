@@ -137,3 +137,11 @@
     - Criar no Heroku, na pagina de configs da app, as variaveis de ambiente para a base de dados.
         - Tmb Adicionar o Add-ons para o banco de dados.
             Heroku Postgres
+- Configurando deploy da aplicação.
+    - Subir arquivos para o Heroku.
+        git add .
+        git commit -m ""
+        git remote -v
+        git push heroku master
+    - Conferir os logs de deploy.
+        heroku logs --tail
