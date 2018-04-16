@@ -94,3 +94,6 @@
     vendor/bin/phinx.bat create CreateBillPaysTable
     vendor/bin/phinx.bat seed:create BillPaysSeeder
     php migrate-seed.php
+- Configurando variaveis de ambiente.
+    Instalando a biblioteca phpdotev.
+        composer require vlucas/phpdotenv:2.4

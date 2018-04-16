@@ -1,13 +1,13 @@
 <?php
 
-return array(
-    'development' => array(
-        'driver'    => 'mysql',
-        'host'      => 'localhost',
-        'database'  => 'php-004-son-gerenciador-financas-pessoais',
-        'username'  => 'root',
-        'password'  => '',
+return [
+    'default_connection' => [
+        'driver'    => getenv('DB_DRIVER'),
+        'host'      => getenv('DB_HOST'),
+        'database'  => getenv('DB_DATABASE'),
+        'username'  => getenv('DB_USERNAME'),
+        'password'  => getenv('DB_PASSWORD'),
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
-    ),
-);
+    ],
+];
