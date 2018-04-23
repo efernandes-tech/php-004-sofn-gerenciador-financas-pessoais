@@ -1,4 +1,3 @@
-# php-004-son-gerenciador-financas-pessoais
+# php-004-sofn-gerenciador-financas-pessoais
 
 Projeto prático PHP OO.
-
